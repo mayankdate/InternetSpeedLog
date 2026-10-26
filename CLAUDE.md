@@ -15,7 +15,9 @@ InternetSpeedLog/
 │   ├── make_report.py      ← reads network_log.csv, renders HTML report
 │   ├── speedtest.exe       ← Ookla CLI binary (Windows); keep out of git
 │   └── chart.umd.min.js    ← Chart.js bundled for offline report rendering
-├── requirements.txt
+├── pyproject.toml          ← Python packages (managed with uv)
+├── uv.lock                 ← exact package versions; commit with pyproject.toml
+├── .python-version
 └── .gitignore
 ```
 
@@ -34,14 +36,14 @@ InternetSpeedLog/
 ## Commands
 
 ```bash
-# Install Python dependencies
-pip install -r requirements.txt
+# Install Python dependencies (creates .venv from uv.lock)
+uv sync
 
 # Run a single speed test and append to log
-python script/monitor.py
+uv run python script/monitor.py
 
 # Generate the HTML report from the log
-python script/make_report.py
+uv run python script/make_report.py
 ```
 
 ## Change guidelines

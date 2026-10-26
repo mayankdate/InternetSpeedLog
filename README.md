@@ -17,19 +17,17 @@ Built to give your ISP hard evidence of slow speeds and dropouts over a few days
    - Download the Windows build from https://www.speedtest.net/apps/cli
    - Unzip it and copy `speedtest.exe` into this folder (next to `monitor.py`).
 
-2. **Create the venv and install Flask** (in VSCode's terminal, in this folder):
+2. **Install the Python packages** with [uv](https://docs.astral.sh/uv/) (in VSCode's terminal, in this folder):
    ```
-   python -m venv .venv
-   .venv\Scripts\activate
-   pip install -r requirements.txt
+   uv sync
    ```
+   This creates `.venv` with the right Python and the exact versions in `uv.lock`.
    In VSCode, select the `.venv` interpreter (Ctrl+Shift+P → "Python: Select Interpreter").
 
 ## Running it
 
 ```
-.venv\Scripts\activate
-python monitor.py
+uv run python script/monitor.py
 ```
 
 Then open **http://localhost:8000** in your browser. Leave the terminal running.
