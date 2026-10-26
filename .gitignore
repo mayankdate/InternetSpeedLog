@@ -1,0 +1,27 @@
+# ---------- R ----------
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj.bak
+
+# ---------- Python / venv ----------
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+# nbconvert scratch output
+*.nbconvert.py
+
+# ---------- Editor / OS ----------
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- Project ----------
+output
